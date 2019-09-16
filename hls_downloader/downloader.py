@@ -36,13 +36,6 @@ class Downloader:
                           " Version/10.0.3 Safari/602.4.8"
         }
 
-    @property
-    def download_dir(self):
-        return self._download_dir
-
-    def downloaded_files_by_url(self):
-        return self._downloaded_files_by_uri.copy()
-
     def uri_to_filename(self, absolute_uri):
         """
         :param absolute_uri:
@@ -55,7 +48,7 @@ class Downloader:
         filename = os.path.join(self._download_dir, rel_filename)
         return filename
 
-    def url_and_file_size_diff(self, uri, filename):
+    def _url_and_file_size_diff(self, uri, filename):
         """
         Check filename size on server by Content-Length
         :return:
@@ -104,7 +97,7 @@ class Downloader:
             logging.warning("File %s already downloaded", filename)
             return filename  # We already downloaded this file in current session
         if os.path.isfile(filename):
-            size_diff = self.url_and_file_size_diff(absolute_uri, filename)
+            size_diff = self._url_and_file_size_diff(absolute_uri, filename)
             if size_diff == 0:
                 self._downloaded_files_by_uri[absolute_uri] = filename
                 logging.warning("File %s already exists and same size", filename)
