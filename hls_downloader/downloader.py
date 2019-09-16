@@ -111,12 +111,3 @@ class Downloader:
         self._downloaded_files_by_uri[absolute_uri] = filename
         logging.info("Downloaded %s -> %s", absolute_uri, filename)
         return filename
-
-
-def test():
-    downloader = Downloader(download_dir=".")
-    downloader.download_one_file("http://tungsten.aaplimg.com/VOD/bipbop_adv_example_hevc/master.m3u8")
-
-
-if __name__ == '__main__':
-    test()
