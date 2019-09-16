@@ -4,7 +4,7 @@ verify_ssl = true
 name = "pypi"
 
 [dev-packages]
-tox = "*"
+pytest = "*"
 
 [packages]
 "m3u8" = ">=0.3.6"
