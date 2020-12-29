@@ -4,6 +4,10 @@ Download all files as is from HLS (HTTP Live Streaming) VoD (Video on Demand) pl
 
 ![Python application](https://github.com/denex/hls-downloader/workflows/Python%20application/badge.svg)
 
+## Documentation
+
+<//denex.github.io/hls-downloader/>
+
 Requirements:
 
 * m3u8
